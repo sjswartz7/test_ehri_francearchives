@@ -1,4 +1,4 @@
-# ehri_francearchives_test
+# test_ehri_francearchives
 Data integration tests for the EHRI portal from open license FranceArchives portal 
 
 This repository contains information about integrating the open license metadata from the FranceArchives metadata portal into the European Holocaust Research Infrastructure (EHRI) metadata portal. This information was compiled as part of an internship at Kazerne Dossin working with the EHRI data integration team in Spring 2024. It is intended to serve as a guideline and adaptable starting point for the EHRI data integration team, including future volunteers or interns, who are interested in pursuing further EHRI portal data integration of metadata from the FranceArchives collections. 
