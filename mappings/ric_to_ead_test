@@ -1,0 +1,94 @@
+target-path	target-node	source-node	value
+/	ead	./rdf:RDF	
+/ead/	eadheader	.	
+/ead/eadheader/	eadid	./rdf:Description[@rdf:about[matches(., "#record")]]/ns2:identifier	text()
+/ead/eadheader/	filedesc	.	
+/ead/eadheader/filedesc/	titlestmt	.	
+/ead/eadheader/filedesc/titlestmt/	titleproper	./rdf:Description[@rdf:about[matches(., "findingaid")]]/ns2:title	text()
+/ead/eadheader/filedesc/titlestmt/	subtitle		text()
+/ead/eadheader/	profiledesc	.	
+/ead/	archdesc	.	
+/ead/archdesc/	@level	.	"collection"
+/ead/archdesc/	did	.	
+/ead/archdesc/	dsc	.	
+/ead/archdesc/	scopecontent	.	
+/ead/archdesc/scopecontent/	p	for $n in ./rdf:Description/ns2:scopeAndContent where contains($n/parent::rdf:Description/@rdf:about, "https://francearchives.gouv.fr/findingaid/") return $n	text()
+/ead/archdesc/	acqinfo	.	
+/ead/archdesc/acqinfo/	p	for $n in ./rdf:Description/ns2:history where contains($n/parent::rdf:Description/@rdf:about, "https://francearchives.gouv.fr/findingaid/") return $n	text()
+/ead/archdesc/did/	unitid		
+/ead/archdesc/did/	unittitle		
+/ead/archdesc/did/	unitdate	if (./rdf:Description[contains(@rdf:about, 'findingaid')]) then concat(./rdf:Description[contains(@rdf:about, 'findingaid')]/ns2:beginningDate, '-', ./rdf:Description[contains(@rdf:about, 'findingaid')]/ns2:endDate) else()	.
+/ead/archdesc/did/	origination		attribute label {"creator"}, text()
+/ead/archdesc/did/	physdesc	.	
+/ead/archdesc/did/physdesc/	dimensions		text()
+/ead/archdesc/did/physdesc/	extent		text()
+/ead/archdesc/did/physdesc/	physfacet		text()
+/ead/archdesc/did/	langmaterial	.	
+/ead/archdesc/did/langmaterial/	language		attribute langcode {xtra:language-name-to-code(text())}, text()
+/ead/archdesc/did/	materialspec	.	
+/ead/archdesc/did/materialspec/	@label	.	"Web Source"
+/ead/archdesc/did/materialspec/	extptr	.	attribute xlink:type {"simple"}, attribute xlink:href {replace(./rdf:Description/ns2:isOrWasDescribedBy/@rdf:resource, "#record", "")}
+/ead/archdesc/did/	note	.	
+/ead/archdesc/did/note/	p	.	"Cette description a été établie à partir des données figurant sur le site FranceArchives en respectant la licence ouverte (type Etalab) proposée par le fournisseur."
+/ead/archdesc/	otherfindaid	.	
+/ead/archdesc/otherfindaid/	p		
+/ead/archdesc/	accessrestrict	.	
+/ead/archdesc/accessrestrict/	p		text()
+/ead/archdesc/acqinfo/	p		text()
+/ead/archdesc/	arrangement	.	
+/ead/archdesc/arrangement/	p		text()
+/ead/archdesc/	bioghist	.	
+/ead/archdesc/bioghist/	p		text()
+/ead/archdesc/	custodhist	.	
+/ead/archdesc/custodhist/	p	./rdf:Description[1]/ns2:hasOrHadManager/@rdf:resource	"Archives départementales de la Somme"
+/ead/archdesc/	userestrict	.	
+/ead/archdesc/userestrict/	p		
+/ead/archdesc/	controlaccess	.	
+/ead/archdesc/controlaccess/	corpname		text()
+/ead/archdesc/controlaccess/	genreform		text()
+/ead/archdesc/controlaccess/	persname		text()
+/ead/archdesc/controlaccess/	subject	./rdf:Description[@rdf:about[matches(., "https://francearchives.gouv.fr/subject/+")]]/rdfs:label	text()
+/ead/archdesc/controlaccess/	geogname	./rdf:Description[@rdf:about[matches(., "https://francearchives.gouv.fr/location/+")]]/rdfs:label	text()
+/ead/archdesc/dsc/	c01	./rdf:Description[contains(@rdf:about, 'facomponent')]	
+/ead/archdesc/dsc/c01/	@level	.	"item"
+/ead/archdesc/dsc/c01/	did	.	
+/ead/archdesc/dsc/c01/did/	unitid	./ns2:identifier	text()
+/ead/archdesc/dsc/c01/did/	unittitle	./ns2:title	text()
+/ead/archdesc/dsc/c01/did/	unitdate	concat(./ns2:beginningDate, '-', ./ns2:endDate)	.
+/ead/archdesc/dsc/c01/did/	origination	.	
+/ead/archdesc/dsc/c01/did/	note	.
+/ead/archdesc/dsc/c01/did/note/	p		text()
+/ead/archdesc/dsc/c01/did/	physdesc	.	
+/ead/archdesc/dsc/c01/did/physdesc/	dimensions		text()
+/ead/archdesc/dsc/c01/did/physdesc/	extent		text()
+/ead/archdesc/dsc/c01/did/physdesc/	physfacet		text()
+/ead/archdesc/dsc/c01/did/	langmaterial	.	
+/ead/archdesc/dsc/c01/did/langmaterial/	language		
+/ead/archdesc/dsc/c01/did/	materialspec	.	
+/ead/archdesc/dsc/c01/did/materialspec/	@label	.	"Web Source"
+/ead/archdesc/dsc/c01/did/materialspec/	extptr	.	attribute xlink:type {'simple'}, attribute xlink:href {@rdf:about}
+/ead/archdesc/dsc/c01/	otherfindaid	.	
+/ead/archdesc/dsc/c01/otherfindaid/	p		
+/ead/archdesc/dsc/c01/	accessrestrict	.	
+/ead/archdesc/dsc/c01/accessrestrict/	p		text()
+/ead/archdesc/dsc/c01/	acqinfo	.	
+/ead/archdesc/dsc/c01/acqinfo/	p		text()
+/ead/archdesc/dsc/c01/	arrangement	.	
+/ead/archdesc/dsc/c01/arrangement/	p		text()
+/ead/archdesc/dsc/c01/	bioghist	.	
+/ead/archdesc/dsc/c01/bioghist/	p	./ns2:history	text()
+/ead/archdesc/dsc/c01/	custodhist	.	
+/ead/archdesc/dsc/c01/custodhist/	p	./ns2:hasOrHadManager	"Archives départementales de la Somme"
+/ead/archdesc/dsc/c01/	scopecontent	.	
+/ead/archdesc/dsc/c01/scopecontent/	p	./ns2:scopeAndContent	text()
+/ead/archdesc/dsc/c01/	userestrict	.	
+/ead/archdesc/dsc/c01/userestrict/	p		text()
+/ead/archdesc/dsc/c01/	controlaccess	.	
+/ead/archdesc/dsc/c01/controlaccess/	corpname		text()
+/ead/archdesc/dsc/c01/controlaccess/	genreform		text()
+/ead/archdesc/dsc/c01/controlaccess/	persname		text()
+/ead/archdesc/dsc/c01/controlaccess/	subject	./rdf:Description[@rdf:about[matches(., "https://francearchives.gouv.fr/subject/+")]]/rdfs:label	text()
+/ead/archdesc/dsc/c01/controlaccess/	geogname	./rdf:Description[@rdf:about[matches(., "https://francearchives.gouv.fr/location/+")]]/rdfs:label	text()
+/ead/eadheader/profiledesc/	langusage	.	
+/ead/eadheader/profiledesc/langusage/	language	.	"French"
+/ead/eadheader/profiledesc/langusage/language/	@langcode	.	"fre"
