@@ -7,13 +7,13 @@ The FranceArchives metadata portal aggregates millions of sources from archives 
 
 As an open-license site, FranceArchives allows for reuse with attribution via an [Etalab open license](https://etalab.gouv.fr/licence-ouverte-open-licence). 
 
-#The following documentation is included in this repository:
+## The following documentation is included in this repository:
 
 - A list of relevant collections, selected per the IHRA's broad standards that a file should have at least one collection about the Holocaust to be considered a Holocaust collection. This compilation was thoroughly researched on the FranceArchives site based primarily on keyword/site theme searches, grouped by finding aid
 
 - A list of search terms used on the FranceArchives site, some of which overlap with the site's [themes](https://francearchives.gouv.fr/fr/subjects)
 
-#Forthcoming documentation includes: 
+## Forthcoming documentation includes: 
 
 - Instructions for retrieving RiC-O metadata in RDF/XML at the collection level via a SPARQL endpoint on the FranceArchives website
   
