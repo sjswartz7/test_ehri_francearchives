@@ -16,17 +16,17 @@ As an open-license site, FranceArchives allows for reuse with attribution via an
 - OAI-PMH instructions for retrieving EAD metadata at the collection level and importing it to the EHRI portal
   
 - URL sets for specific regional archives, obtained via the OAI-PMH endpoint
+  
+- SPARQL query previously used on the FranceArchives site. Evolving/streamlining: these will be improved over time while working with the endpoint.
 
 - Preliminary mapping for RiC-O to EAD via the ECT at the collection level, using one regional archive as a test case
+  
+- Direct download instructions for more limited RDF/XML metadata (last-resort option, not recommended)
 
 ## Forthcoming documentation includes: 
 
 - Instructions for retrieving RiC-O metadata in RDF/XML at the collection level via a SPARQL endpoint on the FranceArchives website
-  
-- SPARQL query previously used on the FranceArchives site. Evolving/streamlining: these will be improved over time while working with the endpoint.
 
 - Attribution for FranceArchives added via XSLT
 
 - Individual archives' XSLT mappings for the OAI-PMH URL sets added to the EHRI portal's EAD Conversion Tool (ECT). These are in-progress and future XSLT will vary and need adaptation depending on the archive.
-
-- Direct download instructions for more limited RDF/XML metadata (last-resort option, not recommended)
