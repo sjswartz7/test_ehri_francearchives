@@ -1,0 +1,5 @@
+For GetRecord requests to obtain records at the collection level in EAD format (apeEAD), the following link plus identifier is required:
+
+https://francearchives.gouv.fr/oai?verb=GetRecord&metadataPrefix=ape_ead&identifier=
+
+The identifier can be found after "findingaid" in a collection link, for example, https://francearchives.gouv.fr/findingaid/4a4af75fad48451eb6e347f4492e9ddd4f2b360f. In this case, "4a4af75fad48451eb6e347f4492e9ddd4f2b360f" is the identifier required to add to the OAI-PMH GetRecord request.
