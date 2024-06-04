@@ -1,0 +1,20 @@
+PREFIX ns2: <http://ogp.me/ns#video:>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
+CONSTRUCT {
+  <https://francearchives.gouv.fr/findingaid/8c64496335a8910d1011a30a446c1adfba5ed2bc> ?ps ?os ;
+    rico:includesOrIncluded ?s .
+  <https://francearchives.gouv.fr/findingaid/8c64496335a8910d1011a30a446c1adfba5ed2bc#record> rico:identifier ?identifier. 
+  ?s ?p ?o .
+  ?s rico:hasOrHadSubject ?subject.
+  ?subject rdfs:label ?label.
+} 
+WHERE {
+  <https://francearchives.gouv.fr/findingaid/8c64496335a8910d1011a30a446c1adfba5ed2bc> ?ps ?os ;       
+  rico:includesOrIncluded+ ?s.
+   <https://francearchives.gouv.fr/findingaid/8c64496335a8910d1011a30a446c1adfba5ed2bc#record> rico:identifier ?identifier. 
+  ?s ?p ?o .
+  ?s rico:hasOrHadSubject ?subject.
+	?subject rdfs:label ?label.
+}
